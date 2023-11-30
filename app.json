@@ -1,42 +1,42 @@
 {
-	"name": "TempMail",
-	"description": "A TeleGramBot to send messages secretly!",
-	"logo": "https://telegra.ph/file/5116db79f852db113875c.jpg",
-	"keywords": [
-		"telegram",
-		"bot",
-		"python",
-		"telethon"
-	],
-	"repository": "https://github.com/Source-Ze/temp",
+    "name": "Force Subscribe Bot",
+    "description": "A Telegram bot to force members to join a specific channel before sending messages in a group.",
+    "keywords": [
+        "telegram",
+        "forcesubscribe",
+        "promoter",
+        "subscriber"
+    ],
+    "repository": "https://github.com/viperadnan-git/force-subscribe-telegram-bot",
+    "success_url": "https://github.com/viperadnan-git/force-subscribe-telegram-bot",
     "env": {
-        "TG_BOT_TOKEN": {
-            "description": "Your Telegram Bot Token from @BotFather",
-            "value": ""
+        "APP_ID": {
+            "description": "Get this value by creating an app on https://my.telegram.org!"
         },
         "API_HASH": {
-            "description": "Your API Hash from my.telegram.org",
-            "value": ""
+            "description": "Get this value by creating an app on https://my.telegram.org!"
         },
-        "APP_ID": {
-            "description": "Your APP ID from my.telegram.org",
-            "value": ""
+        "BOT_TOKEN": {
+            "description": "Bot token generated from https://t.me/BotFather (https://t.me/botfather)"
         },
-        "SUDO_USERS": 
-      "description": "allow only pre-defined users to use this bot",
-      "value": "1234567890"
-     }
-	},
-	"buildpacks": [
-		{
-			"url": "heroku/python"
-		}
-	]
+        "SUDO_USERS": {
+            "description": "List of sudo user ids seperated by space.",
+            "value": "999197022 00000000"
+        }
+    },
+    "addons": [
+        {
+            "plan": "heroku-postgresql",
+            "options": {
+                "version": "12"
+            }
+        }
+    ],
+    "stack": "heroku-20",
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
 }
-
-
-
-
-
-
-
